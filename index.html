@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>React Progress</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", Helvetica, sans-serif;
+      font-weight: 200;
+      margin: 0 auto;
+      width: 750px;
+    }
+    textarea {
+      font-family: monospace;
+      font-size: inherit;
+      height: 150px;
+      width: 100%;
+    }
+    pre {
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+<script src="//fb.me/react-with-addons-0.12.1.js"></script>
+<script src="//fb.me/JSXTransformer-0.12.1.js"></script>
+<script src="dist/react-progress.js"></script>
+<script type="text/jsx">
+  var App = React.createClass({
+    getInitialState: function() {
+      return {
+        percent: 50
+      };
+    },
+
+    handlePercentChange: function(e) {
+      var percent = parseInt(e.target.value, 10) || 0;
+      this.setState({
+        percent: percent
+      });
+    },
+
+    handleDecrement: function() {
+      var percent = this.state.percent-10;
+      if (percent < 0) return;
+      this.setState({ percent: percent });
+    },
+
+    handleIncrement: function() {
+      var percent = this.state.percent+10;
+      if (percent > 100) return;
+      this.setState({ percent: percent });
+    },
+
+    handleDone: function() {
+      this.setState({ percent: 100 });
+    },
+
+    render: function () {
+      return (
+        <div>
+          <h1>react-progress</h1>
+          <Progress percent={this.state.percent} />
+          <input type='number' defaultValue={this.state.percent} onChange={this.handlePercentChange} value={this.state.percent}/>
+          <br/>
+          <button onClick={this.handleDecrement}>-10</button>
+          <button onClick={this.handleIncrement}>+10</button>
+          <button onClick={this.handleDone}>Done</button>
+        </div>
+      );
+    }
+  });
+
+  React.render(<App/>, document.body);
+</script>
+</body>
+</html>

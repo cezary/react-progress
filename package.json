@@ -1,0 +1,40 @@
+{
+  "name": "react-progress",
+  "version": "0.0.1",
+  "description": "Youtube style progress bar for React",
+  "main": "lib/react-progress.js",
+  "scripts": {
+    "test": "script/test --browsers Firefox --single-run",
+    "start": "script/build"
+  },
+  "browserify": {
+    "transform": [
+      "reactify"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cezary/react-progress.git"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "progress"
+  ],
+  "author": "Cezary Wojtkowski <cezary@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cezary/react-progress/issues"
+  },
+  "homepage": "https://github.com/cezary/react-progress",
+  "peerDependencies": {
+    "react": "^0.12.1"
+  },
+  "devDependencies": {
+    "6to5-loader": "^2.0.0",
+    "reactify": "^0.17.1",
+    "uglify-js": "^2.4.15",
+    "webpack": "^1.4.13",
+    "webpack-dev-server": "^1.6.6"
+  }
+}
