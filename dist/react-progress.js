@@ -90,15 +90,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	      backgroundColor: this.props.color,
 	      boxShadow: "1px 1px 1px rgba(0,0,0,0.4)",
 	      borderRadius: "0 1px 1px 0",
-	      WebkitTransition: this.props.speed + "s width",
-	      transition: this.props.speed + "s width"
+	      WebkitTransition: this.props.speed + "s width, " + this.props.speed + "s background-color",
+	      transition: this.props.speed + "s width, " + this.props.speed + "s background-color"
 	    };
 	
 	    return React.createElement("div", { className: "progress", style: progressStyle });
-	  },
-	
-	  dead: function () {
-	    console.log("dead function, should be deleted");
 	  }
 	});
 

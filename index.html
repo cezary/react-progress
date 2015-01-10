@@ -26,6 +26,10 @@
 <script src="//fb.me/JSXTransformer-0.12.1.js"></script>
 <script src="dist/react-progress.js"></script>
 <script type="text/jsx">
+  function randomColor () {
+    return '#' + (function co(lor){   return (lor += [0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f'][Math.floor(Math.random()*16)]) && (lor.length == 6) ?  lor : co(lor); })('');
+  };
+
   var App = React.createClass({
     getInitialState: function() {
       return {
@@ -38,10 +42,15 @@
       var counter = 0;
       var intervalId = setInterval(function() {
         var percent = parseInt(Math.random()*100, 10);
-        if (!this.state.random) {
-          clearInterval(intervalId);
+        var color = randomColor();
+        if (this.state.random) {
+          this.setState({
+            color: color,
+            percent: percent
+          });
         } else {
-          this.setState({ percent: percent });
+          clearInterval(intervalId);
+          this.setState({ random: false });
         }
       }.bind(this), 1000);
     },
@@ -83,7 +92,7 @@
       return (
         <div>
           <h1>react-progress</h1>
-          <Progress percent={this.state.percent} />
+          <Progress color={this.state.color} percent={this.state.percent} />
           <input type='number' defaultValue={this.state.percent} onChange={this.handlePercentChange} value={this.state.percent}/>
           <br/>
           <button onClick={this.handleDecrement}>-10</button>
