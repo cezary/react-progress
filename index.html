@@ -29,31 +29,54 @@
   var App = React.createClass({
     getInitialState: function() {
       return {
-        percent: 50
+        percent: 0,
+        random: true
       };
+    },
+
+    componentDidMount: function() {
+      var counter = 0;
+      var intervalId = setInterval(function() {
+        var percent = parseInt(Math.random()*100, 10);
+        if (!this.state.random) {
+          clearInterval(intervalId);
+        } else {
+          this.setState({ percent: percent });
+        }
+      }.bind(this), 1000);
     },
 
     handlePercentChange: function(e) {
       var percent = parseInt(e.target.value, 10) || 0;
       this.setState({
-        percent: percent
+        percent: percent,
+        random: false
       });
     },
 
     handleDecrement: function() {
       var percent = this.state.percent-10;
       if (percent < 0) return;
-      this.setState({ percent: percent });
+      this.setState({
+        percent: percent,
+        random: false
+      });
     },
 
     handleIncrement: function() {
       var percent = this.state.percent+10;
       if (percent > 100) return;
-      this.setState({ percent: percent });
+      this.setState({
+        percent: percent,
+        random: false
+      });
     },
 
     handleDone: function() {
-      this.setState({ percent: 100 });
+      this.setState({
+        percent: 100,
+        random: false
+      });
     },
 
     render: function () {
