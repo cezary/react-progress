@@ -19,6 +19,9 @@
     pre {
       white-space: pre-wrap;
     }
+    label > span {
+      padding-right: 10px;
+    }
   </style>
 </head>
 <body>
@@ -39,20 +42,7 @@
     },
 
     componentDidMount: function() {
-      var counter = 0;
-      var intervalId = setInterval(function() {
-        var percent = parseInt(Math.random()*100, 10);
-        var color = randomColor();
-        if (this.state.random) {
-          this.setState({
-            color: color,
-            percent: percent
-          });
-        } else {
-          clearInterval(intervalId);
-          this.setState({ random: false });
-        }
-      }.bind(this), 1000);
+      this.randomize();
     },
 
     handlePercentChange: function(e) {
@@ -88,12 +78,44 @@
       });
     },
 
+    handleRandomChange: function(e) {
+      this.setState({
+        random: e.target.checked
+      });
+      this.randomize();
+    },
+
+    randomize: function() {
+      var counter = 0;
+      var intervalId = setInterval(function() {
+        var percent = parseInt(Math.random()*100, 10);
+        var color = randomColor();
+        if (this.state.random) {
+          this.setState({
+            color: color,
+            percent: percent
+          });
+        } else {
+          clearInterval(intervalId);
+          this.setState({ random: false });
+        }
+      }.bind(this), 1000);
+    },
+
     render: function () {
       return (
         <div>
           <h1>react-progress</h1>
           <Progress color={this.state.color} percent={this.state.percent} />
-          <input type='number' defaultValue={this.state.percent} onChange={this.handlePercentChange} value={this.state.percent}/>
+          <label>
+            percent
+            <input type='number' value={this.state.percent} onChange={this.handlePercentChange} />
+          </label>
+          <br/>
+          <label>
+            random
+            <input type='checkbox' checked={this.state.random} onChange={this.handleRandomChange} />
+          </label>
           <br/>
           <button onClick={this.handleDecrement}>-10</button>
           <button onClick={this.handleIncrement}>+10</button>
