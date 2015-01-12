@@ -79,7 +79,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	
 	  render: function () {
-	    var progressStyle = {
+	    var progressStyle = this.props.style || {
 	      display: "inline-block",
 	      position: "fixed",
 	      top: 0,
