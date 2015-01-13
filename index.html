@@ -36,7 +36,9 @@
   var App = React.createClass({
     getInitialState: function() {
       return {
+        color: randomColor(),
         percent: 0,
+        rainbow: false,
         random: true
       };
     },
@@ -85,6 +87,13 @@
       this.randomize();
     },
 
+    handleRainbowChange: function(e) {
+      var rainbow = e.target.value;
+      this.setState({
+        rainbow: true
+      });
+    },
+
     randomize: function() {
       var counter = 0;
       var intervalId = setInterval(function() {
@@ -106,7 +115,7 @@
       return (
         <div>
           <h1>react-progress</h1>
-          <Progress color={this.state.color} percent={this.state.percent} />
+          <Progress color={this.state.rainbow ? null : this.state.color} percent={this.state.percent} />
           <label>
             percent
             <input type='number' value={this.state.percent} onChange={this.handlePercentChange} />
@@ -115,6 +124,11 @@
           <label>
             random
             <input type='checkbox' checked={this.state.random} onChange={this.handleRandomChange} />
+          </label>
+          <br/>
+          <label>
+            rainbow
+            <input type='checkbox' checked={this.state.rainbow} onChange={this.handleRainbowChange} />
           </label>
           <br/>
           <button onClick={this.handleDecrement}>-10</button>
