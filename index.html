@@ -55,6 +55,13 @@
       });
     },
 
+    handleReset: function() {
+      this.setState({
+        percent: 0,
+        random: false
+      });
+    },
+
     handleDecrement: function() {
       var percent = this.state.percent-10;
       if (percent < 0) return;
@@ -90,7 +97,7 @@
     handleRainbowChange: function(e) {
       var rainbow = e.target.value;
       this.setState({
-        rainbow: true
+        rainbow: e.target.checked
       });
     },
 
@@ -131,6 +138,7 @@
             <input type='checkbox' checked={this.state.rainbow} onChange={this.handleRainbowChange} />
           </label>
           <br/>
+          <button onClick={this.handleReset}>Reset</button>
           <button onClick={this.handleDecrement}>-10</button>
           <button onClick={this.handleIncrement}>+10</button>
           <button onClick={this.handleDone}>Done</button>
