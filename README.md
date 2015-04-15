@@ -8,10 +8,6 @@ Youtube style slim progress bar for React
 npm install react-progress
 ```
 
-## Demo
-
-http://cezary.github.io/react-progress/
-
 ## Example
 
 ```javascript

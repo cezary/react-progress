@@ -1,8 +1,0 @@
-#!/bin/sh
-webpack --devtool source-map
-
-node_modules/.bin/uglifyjs dist/react-progress.js \
-  --output dist/react-progress.min.js \
-  --source-map dist/react-progress.min.map \
-  --source-map-url react-progress.min.map \
-  --compress warnings=false
