@@ -95,13 +95,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	      position: "fixed",
 	      top: 0,
 	      left: 0,
-	      width: "" + this.props.percent + "%",
+	      width: this.props.percent + "%",
 	      maxWidth: "100% !important",
-	      height: "" + this.props.height + "px",
+	      height: this.props.height + "px",
 	      boxShadow: "1px 1px 1px rgba(0,0,0,0.4)",
 	      borderRadius: "0 1px 1px 0",
-	      WebkitTransition: "" + this.props.speed + "s width, " + this.props.speed + "s background-color",
-	      transition: "" + this.props.speed + "s width, " + this.props.speed + "s background-color"
+	      WebkitTransition: this.props.speed + "s width, " + this.props.speed + "s background-color",
+	      transition: this.props.speed + "s width, " + this.props.speed + "s background-color"
 	    }, this.props.style);
 	
 	    if (this.props.color && this.props.color !== "rainbow") {
@@ -124,5 +124,5 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ }
 /******/ ])
 });
-
+;
 //# sourceMappingURL=react-progress.map
