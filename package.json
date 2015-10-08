@@ -1,6 +1,6 @@
 {
   "name": "react-progress",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "Youtube style progress bar for React",
   "main": "dist/react-progress.js",
   "scripts": {
@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/cezary/react-progress",
   "peerDependencies": {
-    "react": "^0.12.0"
+    "react": ">=0.12.0 <0.15.0"
   },
   "devDependencies": {
     "babel": "^5.8.23"
