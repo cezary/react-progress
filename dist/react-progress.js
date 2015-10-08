@@ -1,17 +1,8 @@
 'use strict';
 
-var React = require('react');
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-function merge(a, b) {
-  var object = {};
-  Object.keys(a).forEach(function (key) {
-    object[key] = a[key];
-  });
-  Object.keys(b).forEach(function (key) {
-    object[key] = b[key];
-  });
-  return object;
-}
+var React = require('react');
 
 module.exports = React.createClass({
   displayName: 'Progress',
@@ -26,7 +17,7 @@ module.exports = React.createClass({
   },
 
   render: function render() {
-    var progressStyle = merge({
+    var progressStyle = _extends({
       display: 'inline-block',
       position: 'fixed',
       top: 0,
