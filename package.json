@@ -1,10 +1,10 @@
 {
   "name": "react-progress",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Youtube style progress bar for React",
   "main": "dist/react-progress.js",
   "scripts": {
-    "build": "./node_modules/react-tools/bin/jsx --harmony lib/react-progress.js > dist/react-progress.js"
+    "build": "./node_modules/.bin/babel lib/react-progress.js > dist/react-progress.js"
   },
   "repository": {
     "type": "git",
@@ -22,9 +22,9 @@
   },
   "homepage": "https://github.com/cezary/react-progress",
   "peerDependencies": {
-    "react": ">= 0.12.0"
+    "react": "^0.12.0"
   },
   "devDependencies": {
-    "react-tools": "^0.13.1"
+    "babel": "^5.8.23"
   }
 }
