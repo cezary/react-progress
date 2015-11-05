@@ -1,6 +1,6 @@
 {
   "name": "react-progress",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Youtube style progress bar for React",
   "main": "dist/react-progress.js",
   "scripts": {

@@ -2,7 +2,7 @@
 
 Youtube style slim progress bar for React
 
-![](media/demo.gif)
+![](examples/demo.gif)
 
 ## Installation
 
