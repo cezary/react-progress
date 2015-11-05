@@ -1,10 +1,10 @@
 {
   "name": "react-progress",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Youtube style progress bar for React",
   "main": "dist/react-progress.js",
   "scripts": {
-    "build": "./node_modules/.bin/babel lib/react-progress.js > dist/react-progress.js"
+    "build": "./node_modules/.bin/babel src/react-progress.js > dist/react-progress.js"
   },
   "repository": {
     "type": "git",
@@ -13,7 +13,8 @@
   "keywords": [
     "react",
     "react-component",
-    "progress"
+    "progress",
+    "youtube"
   ],
   "author": "Cezary Wojtkowski <cezary@gmail.com>",
   "license": "MIT",
