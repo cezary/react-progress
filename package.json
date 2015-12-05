@@ -1,10 +1,12 @@
 {
   "name": "react-progress",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Youtube style progress bar for React",
   "main": "dist/react-progress.js",
   "scripts": {
-    "build": "./node_modules/.bin/babel src/react-progress.js > dist/react-progress.js"
+    "prepublish": "npm run build:umd",
+    "build": "webpack src/react-progress.js dist/react-progress.js",
+    "build:umd": "npm run build && NODE_ENV=production webpack src/react-progress.js dist/react-progress.min.js"
   },
   "repository": {
     "type": "git",
@@ -23,9 +25,11 @@
   },
   "homepage": "https://github.com/cezary/react-progress",
   "peerDependencies": {
-    "react": ">=0.14.0 <0.15.0"
+    "react": ">=0.14.0"
   },
   "devDependencies": {
-    "babel": "^5.8.23"
+    "babel": "^5.8.23",
+    "babel-loader": "^5.4.0",
+    "webpack": "^1.12.9"
   }
 }

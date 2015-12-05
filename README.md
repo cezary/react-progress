@@ -1,25 +1,29 @@
 # react-progress
 
-Youtube style slim progress bar for React
+Youtube style progress bar for React
 
 ![](examples/demo.gif)
 
-## Installation
+## Install
 
 ```
-npm install react-progress
+npm install react-progress --save
 ```
 
 ## Usage
 
 ```javascript
-var React = require('react');
-var Progress = require('react-progress');
+import React, { Component } from 'react';
+import Progress from 'react-progress';
 
-var Component = React.createClass({
-  render: function() {
+class View extends Component {
+  render() {
     return (
-      <Progress percent={30}/>
+      <div>
+        ...
+        <Progress percent={30}/>
+        ...
+      </div>
     );
   }
 });
@@ -27,10 +31,13 @@ var Component = React.createClass({
 
 ### Props
 
-* height (2), pixel height of progress bar
-* percent (0), decimal value that controls width of progress bar
-* speed (.4), length of timei n seconds for transitions
-* style, an object to apply additional or override any styles
+prop      | type   | default | notes
+----------|--------|---------|--------
+percent   | number | 0       | 0-100
+height    | number | 2       | pixels
+hideDelay | number | .4      | seconds
+speed     | number | .4      | seconds
+style     | object | {}      |
 
 ## License
 
