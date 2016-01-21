@@ -69,6 +69,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _react2 = _interopRequireDefault(_react);
 
 	var defaultProps = {
+	  color: 'rainbow',
 	  height: 2,
 	  hideDelay: .4,
 	  percent: 0,
@@ -101,11 +102,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    transition: props.speed + 's width, ' + props.speed + 's background-color'
 	  }, props.style);
 
-	  if (props.color && props.color !== 'rainbow') {
-	    barStyle.backgroundColor = props.style.backgroundColor || props.color;
-	  } else {
+	  if (props.color === 'rainbow') {
 	    barStyle.backgroundImage = props.style.backgroundImage || 'linear-gradient(to right, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #FF2D55)';
 	    barStyle.backgroundSize = props.style.backgroundSize || '100vw ' + props.height + 'px';
+	  } else {
+	    barStyle.backgroundColor = props.style.backgroundColor || props.color;
 	  }
 
 	  return _react2['default'].createElement(
