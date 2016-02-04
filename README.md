@@ -33,6 +33,7 @@ class View extends Component {
 
 prop      | type   | default | notes
 ----------|--------|---------|--------
+classname | string | ''      |
 color     | string | rainbow | keyword, hexadecimal, rgb, or hsla
 percent   | number | 0       | 0-100
 height    | number | 2       | pixels

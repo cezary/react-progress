@@ -1,6 +1,7 @@
 import React from 'react';
 
 const defaultProps = {
+  className: '',
   color: 'rainbow',
   height: 2,
   hideDelay: .4,
@@ -46,8 +47,8 @@ export default (props) => {
   }
 
   return (
-    <div className='progress' style={containerStyle}>
-      <div className='progress__bar' style={barStyle}></div>
+    <div className={props.className} style={containerStyle}>
+      <div className={props.className.length ? `${props.className}__bar` : ''} style={barStyle}></div>
     </div>
   );
 };

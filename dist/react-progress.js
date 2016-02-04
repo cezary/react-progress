@@ -69,6 +69,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _react2 = _interopRequireDefault(_react);
 
 	var defaultProps = {
+	  className: '',
 	  color: 'rainbow',
 	  height: 2,
 	  hideDelay: .4,
@@ -111,8 +112,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  return _react2['default'].createElement(
 	    'div',
-	    { className: 'progress', style: containerStyle },
-	    _react2['default'].createElement('div', { className: 'progress__bar', style: barStyle })
+	    { className: props.className, style: containerStyle },
+	    _react2['default'].createElement('div', { className: props.className.length ? props.className + '__bar' : '', style: barStyle })
 	  );
 	};
 
