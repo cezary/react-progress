@@ -35,10 +35,10 @@ prop      | type   | default | notes
 ----------|--------|---------|--------
 classname | string | ''      |
 color     | string | rainbow | keyword, hexadecimal, rgb, or hsla
+duration  | number | .4      | seconds
 percent   | number | 0       | 0-100
 height    | number | 2       | pixels
 hideDelay | number | .4      | seconds
-speed     | number | .4      | seconds
 style     | object | {}      |
 
 ## License

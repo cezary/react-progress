@@ -3,10 +3,10 @@ import React from 'react';
 const defaultProps = {
   className: '',
   color: 'rainbow',
+  duration: .4,
   height: 2,
   hideDelay: .4,
   percent: 0,
-  speed: .4,
   style: {}
 };
 
@@ -18,8 +18,8 @@ export default (props) => {
 
   let containerStyle = {
     opacity: props.percent < 100 ? 1 : 0,
-    WebkitTransition: `${props.speed}s opacity`,
-    transition: `${props.speed}s opacity`,
+    WebkitTransition: `${props.duration}s opacity`,
+    transition: `${props.duration}s opacity`,
     WebkitTransitionDelay: `${props.percent < 100 ? 0 : props.hideDelay}s`,
     transitionDelay: `${props.percent < 100 ? 0 : props.hideDelay}s`
   };
@@ -34,8 +34,8 @@ export default (props) => {
     height: `${props.height}px`,
     boxShadow: '1px 1px 1px rgba(0,0,0,0.4)',
     borderRadius: '0 1px 1px 0',
-    WebkitTransition: `${props.speed}s width, ${props.speed}s background-color`,
-    transition: `${props.speed}s width, ${props.speed}s background-color`,
+    WebkitTransition: `${props.duration}s width, ${props.duration}s background-color`,
+    transition: `${props.duration}s width, ${props.duration}s background-color`,
     ...props.style
   };
 
