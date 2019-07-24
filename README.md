@@ -38,6 +38,7 @@ color     | string | rainbow | keyword, hexadecimal, rgb, or hsla
 percent   | number | 0       | 0-100
 height    | number | 2       | pixels
 hideDelay | number | .4      | seconds
+showProgressOnHundred | boolean | falsy      | seconds
 speed     | number | .4      | seconds
 style     | object | {}      |
 
