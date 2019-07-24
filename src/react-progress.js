@@ -16,13 +16,15 @@ export default (props) => {
     ...props
   };
 
-  let containerStyle = {
-    opacity: props.percent < 100 ? 1 : 0,
-    WebkitTransition: `${props.speed}s opacity`,
-    transition: `${props.speed}s opacity`,
-    WebkitTransitionDelay: `${props.percent < 100 ? 0 : props.hideDelay}s`,
-    transitionDelay: `${props.percent < 100 ? 0 : props.hideDelay}s`
-  };
+  let containerStyle = props.showProgressOnHundred
+    ? {}
+    : {
+        opacity: props.percent < 100 ? 1 : 0,
+        WebkitTransition: `${props.speed}s opacity`,
+        transition: `${props.speed}s opacity`,
+        WebkitTransitionDelay: `${props.percent < 100 ? 0 : props.hideDelay}s`,
+        transitionDelay: `${props.percent < 100 ? 0 : props.hideDelay}s`
+      };
 
   let barStyle = {
     display: 'inline-block',
